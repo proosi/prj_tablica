@@ -1,0 +1,18 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="\
+stylesheet">
+
+<body>
+<h1>### Strona główna ###</h1>
+
+<ul>
+  {% for tekst in object_list %}
+    <hr>
+    <li>
+      <a href="{% url 'tresc' tekst.pk %}">{{tekst}}</a>
+   {% endfor %}
+  <hr>
+</ul>
+</body>
