@@ -1,0 +1,12 @@
+<!-- tablica/kasowanie.html -->
+
+{% extends 'tablica/base.html' %}
+
+{% block content %}
+  <h1> Kasowanie wiadomości </h1>
+  <form action="" method="post">
+    {% csrf_token %}
+    <p>Czy na pewno chcesz skasować "{{ object.tytul }}"?</p>
+    <input type="submit" value="Potwierdzam" />
+  </form>
+{% endblock %}

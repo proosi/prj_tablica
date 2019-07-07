@@ -1,0 +1,14 @@
+<!-- tablica/edycja.html -->
+
+{% extends 'tablica/base.html' %}
+
+{% block content %}
+  <h1>Edycja wiadomości</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Aktualizuj" />
+  </form>
+{% endblock %}
+
+
