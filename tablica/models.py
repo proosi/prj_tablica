@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Wiadomosc(models.Model):
     
@@ -8,3 +9,10 @@ class Wiadomosc(models.Model):
 
     def __str__(self):
         return self.tytul[:50]
+
+    def get_absolute_url(self):
+        return reverse("tresc", kwargs={"pk": self.pk})
+    
+
+    class Meta():
+        verbose_name_plural = "Wiadomości"

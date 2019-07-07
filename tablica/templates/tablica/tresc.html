@@ -1,2 +1,14 @@
-<h2>{{ post.tytul }}</h2>
-<p>{{ tekst.tresc }}</p>
+<!-- tablica/tresc.html  -->
+
+{% extends 'tablica/base.html' %}
+
+{% block content %}
+  <div class="wiadomosc">
+    <h2>{{ object.tytul }}</h2>
+    <p>{{ object.tresc }}</p>
+  </div>
+  
+  <a href="{% url 'edycja' object.pk %}">+Edycja wiadomości</a><br>
+  <a href="{% url 'kasowanie' object.pk %}">+Kasowanie wiadomości</a>
+
+{% endblock %}

@@ -1,18 +1,15 @@
-{% load static %}
+<!-- tablica/home.html -->
 
-<link rel="stylesheet" href="{% static 'css/base.css' %}">
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="\
-stylesheet">
+{% extends 'tablica/base.html' %}
 
-<body>
-<h1>### Strona główna ###</h1>
+{% block content %}
+  <h1>Tablica</h1>
 
-<ul>
-  {% for tekst in object_list %}
-    <hr>
-    <li>
-      <a href="{% url 'tresc' tekst.pk %}">{{tekst}}</a>
-   {% endfor %}
-  <hr>
-</ul>
-</body>
+  <ol>
+    {% for tekst in object_list %}
+      <li>
+        <a href="{% url 'tresc' tekst.pk %}">{{ tekst }}</a>
+      </li>
+    {% endfor %}
+  </ol>
+{% endblock %}
